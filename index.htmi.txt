@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELGBLI</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        main {
+            padding: 50px 20px;
+        }
+        .welcome {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        .counter {
+            font-size: 1.2em;
+            background: white;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>ELGBLI</header>
+    <main>
+        <div class="welcome">مرحباً بكم في موقع القبلي</div>
+        <div class="counter">👀 عدد الزوار: <span id="visits">0</span></div>
+    </main><script>
+    // استخدام CountAPI لعداد الزوار
+    fetch('https://api.countapi.xyz/hit/elgbli.site/visits')
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('visits').innerText = data.value;
+    });
+</script>
+
+</body>
+</html>
